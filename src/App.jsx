@@ -9,16 +9,24 @@ function App() {
 
   return (
     <>
-     <div className='bg-cover bg-center w-full h-full 'style={{ backgroundImage: `url(${bg})`, opacity: 0.7 }}>
-     
-     <Router>
-     {/* <Navbar/> */}
+   <div className="relative w-full h-full">
+  {/* Background Image */}
+  <div
+    className="absolute inset-0 bg-cover bg-center bg-[#c5c4c2] opacity-40"
+    style={{ backgroundImage: `url(${bg})` }}
+  ></div>
+
+  {/* Content */}
+  <div className="relative z-10">
+    <Router>
+      {/* <Navbar /> */}
       <Routes>
-        <Route path="/" element={<HomePage/>} />      
-        </Routes>
-      </Router>
-     </div>
-     
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </Router>
+  </div>
+</div>
+
 
      
     </>

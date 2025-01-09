@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from "../assets/logonew.png";
+import logo from "../assets/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from 'react-router-dom';
 
@@ -9,8 +9,10 @@ const Navbar = () => {
   return (
     <div className="w-full md:px-20 px-5 flex justify-between items-center  ">
      
-      <div>
-        <img className="w-[80px] h-[60px]" src={logo} alt="Logo" />
+      <div className='flex justify-center items-center gap-4'>
+        <div className='w-[60px] h-[60px]'> <img className="w-full h-full" src={logo} alt="Logo"/></div>
+        
+        <span className='font-playfair text-2xl font-bold text-[#ebb61a]'>AsrtoNarad</span>
       </div>
 
     
@@ -37,7 +39,7 @@ const Navbar = () => {
 
         {/* Hamburger Menu for smaller screens */}
         <button
-          className="flex md:hidden bg-[#e9ae01] rounded-3xl py-2 px-4 text-white"
+          className="flex md:hidden bg-[#e9ae01] w-[50px] justify-center rounded-3xl py-1 px-4 text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <GiHamburgerMenu size={20} />
@@ -46,7 +48,7 @@ const Navbar = () => {
 
      
       {isMenuOpen && (
-        <div className="absolute top-16 right-5 bg-white shadow-lg rounded-md p-5 w-[80%] flex flex-col gap-4 md:hidden z-50">
+        <div className="absolute top-[68px] left-1/2 -translate-x-1/2 bg-white shadow-lg rounded-md p-5 w-full flex flex-col gap-4 md:hidden z-50">
           <NavLink
             to="/"
             className="text-gray-700 hover:text-[#195e77] font-medium"
