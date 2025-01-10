@@ -22,6 +22,7 @@ const HomePage = () => {
             <button className='bg-[#ebb61a] w-full flex justify-center md:w-1/3 rounded-3xl px-4 py-2 text-white text-sm md:text-base'>
               Get started
             </button>
+            <h1 className='text-[#ebb61a] text-2xl md:text-7xl font-bold font-playfair'>Install App Now</h1>
           </div>
 
           <div className="md:w-[35%] w-full flex justify-center items-center">

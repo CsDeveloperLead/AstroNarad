@@ -64,10 +64,10 @@ const Slider = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className="flex w-full md:w-1/3 flex-shrink-0 justify-center items-center  h-[500px]"
+            className="flex w-auto md:w-1/3 flex-shrink-0 justify-center items-center overflow-visible  h-[500px]"
           >
             <img
-              className="w-[300px] h-full object-cover rounded-3xl"
+              className="w-[300px] h-[90%] object-cover rounded-3xl shadow-inner hover:mb-10 duration-500 transition-all ease-in-out "
               src={image.src}
               alt={`slide-${index + 1}`}
             />
