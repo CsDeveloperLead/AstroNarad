@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import logo from "../assets/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,9 +33,11 @@ const Navbar = () => {
 
      
       <div className="flex items-center">
+        <Link to="/determiner" className="hidden md:flex text-gray-700 hover:text-[#195e77] font-medium">
         <button className="hidden md:flex bg-[#e9ae01] rounded-3xl py-2 px-4 text-white">
-          Buy Now
+          Login / Register
         </button>
+        </Link>
 
         {/* Hamburger Menu for smaller screens */}
         <button

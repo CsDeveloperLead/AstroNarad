@@ -1,9 +1,12 @@
 
-import Navbar from './components/Navbar'
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// import Navbar from './components/Navbar'
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import HomePage from './pages/HomePage';
 import bg from "../src/assets/astrology-bg.png";
-import Slider from './components/Slider';
+// import Slider from './components/Slider';
+import DeterminerPage from "./pages/DeterminerPage.jsx";
+import AuthPage from "./pages/SignUp.jsx";
+import AdminDashboard from "./pages/AdminDashboard.jsx";
 function App() {
   
 
@@ -22,6 +25,13 @@ function App() {
       {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/determiner" element={<DeterminerPage />} />
+        <Route path="/astrologer/signup" element={<AuthPage />} />
+        <Route path="/astrologer/login" element={<AuthPage />} />
+        <Route path="/user/signup" element={<AuthPage />} />
+        <Route path="/user/login" element={<AuthPage />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+
       </Routes>
     </Router>
   </div>
