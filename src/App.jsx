@@ -7,6 +7,8 @@ import bg from "../src/assets/astrology-bg.png";
 import DeterminerPage from "./pages/DeterminerPage.jsx";
 import AuthPage from "./pages/SignUp.jsx";
 import AdminDashboard from "./pages/AdminDashboard.jsx";
+import WorkInProgress from "./components/WorkInProgress.jsx";
+import ContactUs from "./components/ContactUs.jsx";
 function App() {
   
 
@@ -31,6 +33,9 @@ function App() {
         <Route path="/user/signup" element={<AuthPage />} />
         <Route path="/user/login" element={<AuthPage />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/about" element={<WorkInProgress />} />
+        <Route path="/services" element={<WorkInProgress />} />
+        <Route path="/contact" element={<ContactUs />} />
 
       </Routes>
     </Router>

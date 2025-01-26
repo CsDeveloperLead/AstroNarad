@@ -12,9 +12,9 @@ const DeterminerPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center ">
-      <h1 className="text-6xl font-bold mb-8 font-playfair text-yellow-500">Welcome to Our Platform</h1>
-      <p className="text-2xl font-extrabold my-4 font-playfair text-green-800">Are you an Astrologer or a User?</p>
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 md:px-0 ">
+      <h1 className="text-4xl md:text-6xl text-center font-bold mb-8 font-playfair text-yellow-500">Welcome to Our Platform</h1>
+      <p className="text-2xl font-extrabold text-center  my-4 font-playfair text-green-800">Are you an Astrologer or a User?</p>
       <div className="flex space-x-8 my-10">
         {/* Astrologer Button */}
         <button
