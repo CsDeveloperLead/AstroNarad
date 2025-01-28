@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AdminDashboard = () => {
   const [products, setProducts] = useState([]);
@@ -42,9 +42,48 @@ const AdminDashboard = () => {
     setUsers((prev) => prev.filter((u) => u.id !== id));
   };
 
+  const getAllAstrologers = () => {
+    const accessToken = localStorage.getItem("token"); // Retrieve token from local storage
+  
+    try {
+      fetch("http://localhost:8000/api/astrologers", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`, 
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          setUsers(data);
+        })
+        .catch((error) => {
+          console.log("Error fetching astrologers:", error);
+        });
+    } catch (error) {
+      console.log("Unexpected error:", error);
+    }
+  };
+  
+  
+
+  useEffect(() => {
+    getAllAstrologers();
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <h1 className="text-3xl font-bold mb-6">Admin Dashboard</h1>
+      <div>
+        <h1 className="text-3xl font-bold mb-6 text-yellow-300 ">ALL ASTROLOGERS</h1>
+
+      </div>
 
       {/* Product Management Section */}
       <div className="mb-8 bg-white p-6 rounded shadow-md">

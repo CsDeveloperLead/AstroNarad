@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const DeterminerPage = () => {
+const SignupDeterminerPage = () => {
   const navigate = useNavigate();
 
   const handleAstrologer = () => {
@@ -36,4 +36,4 @@ const DeterminerPage = () => {
   );
 };
 
-export default DeterminerPage;
+export default SignupDeterminerPage;

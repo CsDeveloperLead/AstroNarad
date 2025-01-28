@@ -6,6 +6,16 @@ import { NavLink, Link } from "react-router-dom";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const token = localStorage.getItem("token");
+
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // Remove token on logout
+    localStorage.removeItem("user_id"); // Optionally remove user_id
+    localStorage.removeItem("token_no");
+    window.location.reload(); // Refresh the page to update the UI
+  };
+
+
   const getLinkClasses = ({ isActive }) =>
     isActive
       ? "text-[#195e77] font-semibold underline"
@@ -40,10 +50,16 @@ const Navbar = () => {
       </div>
 
       {/* Login/Register and Hamburger */}
-      <div className="flex items-center">
-        <Link to="/determiner" className="hidden md:flex">
-          <button className="hidden md:flex bg-[#e9ae01] rounded-3xl py-2 px-4 text-white">
-            Login / Register
+      {!token && (
+      <div className="flex items-center gap-4">
+        <Link to="/signup/determiner" className="hidden md:flex">
+          <button className="hidden md:flex bg-[#e9ae01] rounded-3xl py-2 px-10 text-white">
+             Register
+          </button>
+        </Link>
+        <Link to="/login/determiner" className="hidden md:flex">
+          <button className="hidden md:flex bg-[#e9ae01] rounded-3xl py-2 px-10 text-white">
+             Login
           </button>
         </Link>
 
@@ -55,6 +71,14 @@ const Navbar = () => {
           <GiHamburgerMenu size={20} />
         </button>
       </div>
+      )}
+      {token && (
+         <button className="hidden md:flex bg-[#e9ae01] rounded-3xl py-2 px-10 text-white"
+         onClick={handleLogout}>
+         Logout
+      </button>
+      )}
+
 
       {/* Mobile Menu */}
       {isMenuOpen && (

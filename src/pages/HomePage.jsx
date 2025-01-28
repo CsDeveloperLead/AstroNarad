@@ -1,7 +1,7 @@
 // import React from "react";
 // import bg2 from '../assets/bg2.png';
 import chakra from "../assets/chakra.png";
-import Slider from "../components/Slider";
+// import Slider from "../components/Slider";
 import Navbar from "../components/Navbar";
 
 const HomePage = () => {
@@ -46,7 +46,7 @@ const HomePage = () => {
         </div>
       </div>
       <div className="w-full  p-4">
-        <Slider />
+        {/* <Slider /> */}
       </div>
     </div>
   );
